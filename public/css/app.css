@@ -14487,12 +14487,33 @@ label.panel-block:hover {
   background: rgba(255, 56, 96, 0.05);
 }
 
+/* ========================================
+   =========== Nav Item Override ==========
+   ======================================== */
+
+.has-shadow {
+  -webkit-box-shadow: 0 0 1px rgba(57, 70, 78, 0.15), 0 10px 55px -8px rgba(57, 70, 78, 0.25) !important;
+          box-shadow: 0 0 1px rgba(57, 70, 78, 0.15), 0 10px 55px -8px rgba(57, 70, 78, 0.25) !important;
+}
+
 .nav-item img {
   max-height: 2.8rem;
 }
 
 .navbar {
   height: 4.5rem;
+}
+
+/* ========================================
+   =========== Text overrides ==========
+   ======================================== */
+
+.is-muted {
+  color: #b5b5b5 !important;
+}
+
+a.is-muted:hover {
+  color: #7a7a7a !important;
 }
 
 .m-t-5 {

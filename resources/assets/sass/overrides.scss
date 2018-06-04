@@ -1,4 +1,13 @@
 
+/* ========================================
+   =========== Nav Item Override ==========
+   ======================================== */
+
+.has-shadow {
+    box-shadow: 0 0 1px rgba(57, 70, 78, .15), 0 10px 55px -8px rgba(57, 70, 78, .25) !important;
+}
+
+
 .nav-item img {
     max-height: 2.8rem;
 }
@@ -6,3 +15,16 @@
 .navbar {
     height: 4.5rem;
 }
+
+/* ========================================
+   =========== Text overrides ==========
+   ======================================== */
+
+.is-muted {
+    color: $grey-light !important;
+}
+
+a.is-muted:hover {
+    color: $grey !important;
+}
+

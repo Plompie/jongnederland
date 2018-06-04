@@ -987,6 +987,12 @@ window.Vue = __webpack_require__(35);
 
 Vue.use(__WEBPACK_IMPORTED_MODULE_0_buefy___default.a);
 
+Vue.component(__WEBPACK_IMPORTED_MODULE_0_buefy___default.a.Checkbox.name, __WEBPACK_IMPORTED_MODULE_0_buefy___default.a.Checkbox);
+var app = new Vue({
+    el: '#app',
+    data: {}
+});
+
 //Vue.component('example-component', require('./components/ExampleComponent.vue'));
 
 /***/ }),
