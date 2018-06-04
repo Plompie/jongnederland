@@ -8,7 +8,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>Jong Nederland</title>
+    <title>Jong Nederland - Beheer</title>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
@@ -24,6 +24,9 @@
 <body>
     <div id="app">
         @include('_includes.nav.main')
+
+        @include('_includes.nav.beheer')
+
         @yield('content')
     </div>
 </body>

@@ -37,14 +37,14 @@
                 <div class="field">
                     <label for="password_confirmation" class="label">Wachtwoord bevestigen</label>
                     <p class="control">
-                        <input class="input {{$errors->has('password_confirmation') ? 'is-danger' : ''}}" type="password_confirmation" name="password_confirmation" id="password_confirmation" required>
+                        <input class="input {{$errors->has('password_confirmation') ? 'is-danger' : ''}}" type="password" name="password_confirmation" id="password_confirmation" required>
                     </p>
                     @if ($errors->has('password_confirmation'))
                     <p class="help is-danger">Wachtwoorden komt niet overeen</p>
                     @endif
                 </div>
 
-                <button class="button is-primary is-outlined is-fullwidth m-t-30">Registreren</button>
+                <button class="button is-info is-outlined is-fullwidth m-t-30">Registreren</button>
             </div> {{-- einde van .card-content --}}
             </form>
         </div>  {{--einde van .card--}}

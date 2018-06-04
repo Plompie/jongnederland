@@ -12,7 +12,7 @@
                 <div class="field">
                     <label for="email" class="label">E-mailadres</label>
                     <p class="control">
-                        <input class="input {{$errors->has('email') ? 'is-danger' : ''}}" type="text" name="email" id="email" placeholder="Admin" value="{{old('email')}}">
+                        <input class="input {{$errors->has('email') ? 'is-danger' : ''}}" type="text" name="email" id="email" placeholder="voorbeeld@voorbeeld.nl" value="{{old('email')}}">
                     </p>
                     @if ($errors->has('email'))
                     <p class="help is-danger">Onjuist e-mailadres</p>
@@ -29,9 +29,9 @@
                     @endif
                 </div>
 
-                <b-checkbox name="remember" class="m-t-20">Onthoud mij</b-checkbox>
+                <b-checkbox name="remember" type="is-info" class="m-t-20 is-info">Onthoud mij</b-checkbox>
 
-                <button class="button is-primary is-outlined is-fullwidth m-t-30">Log in</button>
+                <button class="button is-info is-outlined is-fullwidth m-t-30 cta-blue">Log in</button>
             </div> {{-- einde van .card-content --}}
             </form>
         </div>  {{--einde van .card--}}

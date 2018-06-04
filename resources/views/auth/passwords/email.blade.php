@@ -12,20 +12,20 @@
     <div class="column is-one-third is-offset-one-third m-t-100">
         <div class="card">
             <div class="card-content">
-                <h1 class="title">Login</h1>
+                <h1 class="title">Wachtwoord vergeten</h1>
                 <form action="{{route('login')}}" method="POST" role="form">
                 {{csrf_field()}}
                 <div class="field">
                     <label for="email" class="label">E-mailadres</label>
                     <p class="control">
-                        <input class="input {{$errors->has('email') ? 'is-danger' : ''}}" type="text" name="email" id="email" placeholder="Admin" value="{{old('email')}}">
+                        <input class="input {{$errors->has('email') ? 'is-danger' : ''}}" type="text" name="email" id="email" placeholder="voorbeeld@voorbeeld.nl" value="{{old('email')}}">
                     </p>
                     @if ($errors->has('email'))
                     <p class="help is-danger">Onjuist e-mailadres</p>
                     @endif
                 </div>
 
-                <button class="button is-primary is-outlined is-fullwidth m-t-30">Verzoek Wachtwoord Reset</button>
+                <button class="button is-info is-outlined is-fullwidth m-t-30">Verzoek Wachtwoord Reset</button>
             </div> {{-- einde van .card-content --}}
             </form>
         </div>  {{--einde van .card--}}
