@@ -6,10 +6,15 @@
 @import "variables";
 
 // Font-Awesome
-@import "node_modules/font-awesome/scss/font-awesome";
+@import url("https://use.fontawesome.com/releases/v5.0.13/css/all.css");
 
 // Bulma
-@import 'node_modules/bulma/bulma';
+@import "node_modules/bulma/bulma";
 
 // Bulma Vue Modules
 @import "node_modules/buefy/src/scss/buefy";
+
+// Custom SASS Pagina's
+@import "overrides";
+@import "helpers";
+@import "styles";
