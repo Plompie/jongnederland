@@ -10,8 +10,8 @@
             Administratie
         </p>
         <ul class="menu-list">
-            <li><a href="#">Beheer gebruikers</a></li>
-            <li><a href="#">Rollen &amp; Permissies</a></li>
+            <li><a href="{{route('users.index')}}">Beheer gebruikers</a></li>
+            <li><a href="{{route('permissions.index')}}">Rollen &amp; Permissies</a></li>
         </ul>
     </aside>
 </div>

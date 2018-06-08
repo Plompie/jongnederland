@@ -10,12 +10,12 @@
                 <form action="{{route('register')}}" method="POST" role="form">
                 {{csrf_field()}}
                 <div class="field">
-                    <label for="nickname" class="label">Nickname</label>
+                    <label for="nickname" class="label">Naam</label>
                     <p class="control">
                         <input class="input {{$errors->has('nickname') ? 'is-danger' : ''}}" type="text" name="nickname" id="nickname" value="{{old('nickname')}}" required>
                     </p>
                     @if ($errors->has('nickname'))
-                    <p class="help is-danger">Ongeldige nickname</p>
+                    <p class="help is-danger">Ongeldige naam</p>
                     @endif
                 </div>
                 <div class="field">
