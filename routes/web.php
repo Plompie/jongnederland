@@ -22,6 +22,7 @@ Route::prefix('beheer')->middleware('role:administrator|redacteur')->group(funct
     Route::get('/dashboard', 'BeheerController@dashboard')->name('beheer.dashboard');
     Route::resource('/users', 'UserController');
     Route::resource('/permissions', 'PermissionController', ['except' => 'destroy']);
+    Route::resource('/roles', 'RoleController', ['except' => 'destroy']);
 });
 
 Route::get('/home', 'HomeController@index')->name('home');

@@ -28,6 +28,18 @@
                     <pre>{{$user->email}}</pre>
                 </div>
             </div>
+
+            <div class="field">
+                <div class="field">
+                    <label for="roles" class="label">Rollen</label>
+                    <ul>
+                        {{$user->roles->count() == 0 ? 'Deze gebruiker heeft nog geen rechten' : ''}}
+                        @foreach($user->roles as $role)
+                            <li>{{$role->display_name}} {{$role->description}}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            </div>
         </div>
     </div>
 </div>
