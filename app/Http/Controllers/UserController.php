@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
-use App\Role;
 use DB;
 use Session;
 use Hash;
@@ -30,8 +29,7 @@ class UserController extends Controller
      */
     public function create()
     {
-      $roles = Role::all();
-      return view('beheer.users.create')->withRoles($roles);
+      return view('beheer.users.create');
     }
 
     /**
@@ -65,20 +63,13 @@ class UserController extends Controller
       $user->name = $request->name;
       $user->email = $request->email;
       $user->password = Hash::make($password);
-      $user->save();
 
-      if ($request->roles) {
-        $user->syncRoles(explode(',', $request->roles));
+      if ($user->save()) {
+        return redirect()->route('users.show', $user->id);
+      } else {
+        Session::flash('danger', 'Sorry a problem occurred while creating this user.');
+        return redirect()->route('users.create');
       }
-
-      return redirect()->route('users.show', $user->id);
-
-      // if () {
-      //
-      // } else {
-      //   Session::flash('danger', 'Sorry a problem occurred while creating this user.');
-      //   return redirect()->route('users.create');
-      // }
     }
 
     /**
@@ -89,7 +80,7 @@ class UserController extends Controller
      */
     public function show($id)
     {
-      $user = User::where('id', $id)->with('roles')->first();
+      $user = User::findOrFail($id);
       return view("beheer.users.show")->withUser($user);
     }
 
@@ -101,9 +92,8 @@ class UserController extends Controller
      */
     public function edit($id)
     {
-      $roles = Role::all();
-      $user = User::where('id', $id)->with('roles')->first();
-      return view("beheer.users.edit")->withUser($user)->withRoles($roles);
+      $user = User::findOrFail($id);
+      return view("beheer.users.edit")->withUser($user);
     }
 
     /**
@@ -135,17 +125,13 @@ class UserController extends Controller
       } elseif ($request->password_options == 'manual') {
         $user->password = Hash::make($request->password);
       }
-      $user->save();
 
-      $user->syncRoles(explode(',', $request->roles));
-      return redirect()->route('users.show', $id);
-
-      // if () {
-      //   return redirect()->route('users.show', $id);
-      // } else {
-      //   Session::flash('error', 'There was a problem saving the updated user info to the database. Try again later.');
-      //   return redirect()->route('users.edit', $id);
-      // }
+      if ($user->save()) {
+        return redirect()->route('users.show', $id);
+      } else {
+        Session::flash('error', 'There was a problem saving the updated user info to the database. Try again later.');
+        return redirect()->route('users.edit', $id);
+      }
     }
 
     /**

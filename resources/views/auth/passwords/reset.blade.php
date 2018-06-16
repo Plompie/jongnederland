@@ -41,7 +41,7 @@
                     @endif
                 </div>
 
-                <button class="button is-info is-outlined is-fullwidth m-t-30">Reset Wachtwoord</button>
+                <button class="button is-info is-outlined is-fullwidth m-t-30">Reset wachtwoord</button>
             </div> {{-- einde van .card-content --}}
             </form>
         </div>  {{--einde van .card--}}

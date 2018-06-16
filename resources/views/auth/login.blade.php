@@ -29,8 +29,6 @@
                     @endif
                 </div>
 
-                <b-checkbox name="remember" type="is-info" class="m-t-20 is-info">Onthoud mij</b-checkbox>
-
                 <button class="button is-info is-outlined is-fullwidth m-t-30 cta-blue">Log in</button>
             </div> {{-- einde van .card-content --}}
             </form>
