@@ -14487,27 +14487,6 @@ label.panel-block:hover {
   background: rgba(255, 56, 96, 0.05);
 }
 
-/* ========================================
-   =========== Navigatie Item Overrides ==========
-   ======================================== */
-
-.has-shadow {
-  -webkit-box-shadow: 0 0 1px rgba(57, 70, 78, 0.15), 0 10px 55px -8px rgba(57, 70, 78, 0.25) !important;
-          box-shadow: 0 0 1px rgba(57, 70, 78, 0.15), 0 10px 55px -8px rgba(57, 70, 78, 0.25) !important;
-}
-
-.nav-item img {
-  max-height: 2.8rem;
-}
-
-.navbar {
-  height: 4.5rem;
-}
-
-/* ========================================
-   =========== Tekst overrides ==========
-   ======================================== */
-
 .is-muted {
   color: #b5b5b5 !important;
 }
@@ -14516,17 +14495,23 @@ a.is-muted:hover {
   color: #7a7a7a !important;
 }
 
-/* ========================================
-   =========== Knoppen overrides ==========
-   ======================================== */
+.nav-item img {
+  max-height: 2.8rem;
+}
 
-/* ========================================
-=========== Body overrides ==========
-======================================== */
+.nav {
+  height: 4.5rem;
+}
 
-html,
-body {
-  background-color: #f8f9fa !important;
+.navbar-brand .brand-item {
+  margin-right: 5px;
+  margin-left: 10px;
+}
+
+@media screen and (min-width: 1088px) {
+  .navbar-brand .brand-item {
+    margin-right: 15px;
+  }
 }
 
 .m-t-5 {
@@ -14913,11 +14898,40 @@ body {
   padding-right: 100px !important;
 }
 
-.side-menu {
+#admin-side-menu {
   position: fixed;
-  height: 100vh;
+  top: 4rem;
+  left: -200px;
+  bottom: 0;
   width: 200px;
   background-color: white !important;
+  overflow-y: scroll;
+  -webkit-transition: left 0.3s ease-in-out;
+  transition: left 0.3s ease-in-out;
+}
+
+#admin-side-menu.is-active {
+  left: 0;
+  -webkit-transition: left 0.3s ease-in-out;
+  transition: left 0.3s ease-in-out;
+}
+
+@media screen and (min-width: 1088px) {
+  #admin-side-menu {
+    left: 0;
+  }
+}
+
+#admin-slideout-button {
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+#admin-slideout-button.is-active {
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  -webkit-transform: rotateY(180deg);
+          transform: rotateY(180deg);
 }
 
 .management-area {

@@ -23,6 +23,7 @@ Route::prefix('beheer')->middleware('role:administrator|redacteur|gebruiker')->g
   Route::resource('/users', 'UserController');
   Route::resource('/permissions', 'PermissionController', ['except' => 'destroy']);
   Route::resource('/roles', 'RoleController', ['except' => 'destroy']);
+  Route::resource('/posts', 'PostController');
 });
 
 Route::get('/home', 'HomeController@index')->name('home');

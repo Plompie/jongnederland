@@ -1,44 +1,22 @@
-
-/* ========================================
-   =========== Navigatie Item Overrides ==========
-   ======================================== */
-
-.has-shadow {
-    box-shadow: 0 0 1px rgba(57, 70, 78, .15), 0 10px 55px -8px rgba(57, 70, 78, .25) !important;
+.is-muted {
+  color: $grey-light !important;
 }
 
+a.is-muted:hover{
+  color: $grey !important;
+}
 
 .nav-item img {
-    max-height: 2.8rem;
+  max-height: 2.8rem;
 }
 
-.navbar {
-    height: 4.5rem;
+.nav {
+  height: 4.5rem;
 }
-
-/* ========================================
-   =========== Tekst overrides ==========
-   ======================================== */
-
-.is-muted {
-    color: $grey-light !important;
+.navbar-brand .brand-item {
+  margin-right: 5px;
+  margin-left: 10px;
+  @include desktop {
+    margin-right: 15px;
+  }
 }
-
-a.is-muted:hover {
-    color: $grey !important;
-}
-
-/* ========================================
-   =========== Knoppen overrides ==========
-   ======================================== */
-
-
-/* ========================================
-=========== Body overrides ==========
-======================================== */
-
-html, body {
-    background-color: #f8f9fa !important;
-
-}
-

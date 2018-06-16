@@ -980,6 +980,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_buefy___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_buefy__);
 __webpack_require__(11);
 
+__webpack_require__(44);
+
 window.Vue = __webpack_require__(35);
 
 
@@ -43228,6 +43230,21 @@ exports.clearImmediate = (typeof self !== "undefined" && self.clearImmediate) ||
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 40 */,
+/* 41 */,
+/* 42 */,
+/* 43 */,
+/* 44 */
+/***/ (function(module, exports) {
+
+var adminSlideoutButton = document.getElementById('admin-slideout-button');
+
+adminSlideoutButton.onclick = function () {
+    this.classList.toggle('is-active');
+    document.getElementById('admin-side-menu').classList.toggle('is-active');
+};
 
 /***/ })
 /******/ ]);
