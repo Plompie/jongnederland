@@ -1,29 +1,47 @@
 @extends('layouts.app')
 
 @section('content')
-
+<div class="container">
 @foreach($posts as $post)
-<div class="container m-t-30">
-    <div class="box" style="background-color: #FAFAFA">
-    <article class="media">
-        <div class="media-content">
-            <div class="content">
-                <p>
-                <h4 class="h1 has-text-centered"><strong>{{ $post->title }}</strong></h1>
-                <hr>
-{{--                  <figure class="image is-5by1">
+
+<div class="container m-t-50">
+    <div class="box">
+    <div class="columns">
+        <div class="column is-one-quarter-desktop">
+                <figure class="image">
                     <img src="{{ asset('images/' . $post->image)}}">
-                </figure>  --}}
-                </p>
-                <p class="has-text-centered">{{ $post->header }}</p>
-                <div class="box has-text-centered" style="background-color: #FAFAFA">
-                <a class="button is-primary has-text-centered" href="{{ route('artikel.show', ['id' => $post->id]) }}">Lees meer..</a>
-                </div>
+                </figure>
+            </div>
+        <div class="column is-three-quarters-desktop">
+            <div class="content is-large">
+                <h2 class="subtitle is-1">{{ $post->title }}</h2>
+                <hr>
+
+                <nav class="level">
+                    <div class="level-item has-text-centered">
+                        <div>
+                            <p class="heading">Laatst geüpdate:</p>
+                            <p class="subtitle">{{ $post->updated_at }}</p>
+                        </div>
+                    </div>
+                    <div class="level-item has-text-centered">
+                        <div>
+                            <p class="heading">Aangemaakt op:</p>
+                            <p class="subtitle">{{ $post->created_at }}</p>
+                        </div>
+                    </div>
+                    <div class="level-item has-text-centered">
+                        <div>
+                            <p class="heading">Lees meer:</p>
+                            <a class="button is-primary has-text-centered" href="{{ route('artikel.show', ['id' => $post->id]) }}">Bezoeken</a>
+                        </div>
+                    </div>
+                </nav>
             </div>
         </div>
-    </article>
+        </div>
     </div>
 </div>
 @endforeach
-
+</div>
 @endsection
