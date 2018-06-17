@@ -12,6 +12,7 @@ a.is-muted:hover{
 
 .nav {
   height: 4.5rem;
+  background-color: #E1F5FE !important;
 }
 .navbar-brand .brand-item {
   margin-right: 5px;
@@ -19,4 +20,10 @@ a.is-muted:hover{
   @include desktop {
     margin-right: 15px;
   }
+}
+textarea {
+    resize: none !important;
+}
+body {
+  background-color: #B3E5FC !important;
 }

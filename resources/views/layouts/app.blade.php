@@ -25,6 +25,7 @@
     <div id="app">
         @include('_includes.nav.main')
         @yield('content')
+        @include('_includes.footer.footer')
     </div>
 </body>
 </html>

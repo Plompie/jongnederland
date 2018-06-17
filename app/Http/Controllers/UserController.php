@@ -65,10 +65,10 @@ class UserController extends Controller
       $user->password = Hash::make($password);
 
       if ($user->save()) {
-        return redirect()->route('users.show', $user->id);
+        return redirect()->route('gebruikers.index', $user->id);
       } else {
         Session::flash('danger', 'Sorry a problem occurred while creating this user.');
-        return redirect()->route('users.create');
+        return redirect()->route('gebruikers.create');
       }
     }
 
@@ -127,10 +127,10 @@ class UserController extends Controller
       }
 
       if ($user->save()) {
-        return redirect()->route('users.show', $id);
+        return redirect()->route('gebruikers.show', $id);
       } else {
         Session::flash('error', 'There was a problem saving the updated user info to the database. Try again later.');
-        return redirect()->route('users.edit', $id);
+        return redirect()->route('gebruikers.edit', $id);
       }
     }
 
@@ -140,8 +140,12 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(User $user, $id)
     {
-        //
+        $user = User::findOrFail($id);
+
+        $user->delete();
+
+        return redirect()->route('gebruikers.index');
     }
 }

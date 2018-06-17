@@ -8,7 +8,7 @@
       </div>
     </div>
     <hr class="m-t-0">
-    <form action="{{route('users.store')}}" method="POST">
+    <form action="{{route('gebruikers.store')}}" method="POST">
       {{csrf_field()}}
       <div class="columns">
         <div class="column">

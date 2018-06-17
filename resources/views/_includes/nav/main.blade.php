@@ -1,8 +1,8 @@
 
 
-    <nav class="navbar is-transparent has-shadow">
+    <nav class="navbar is-transparent has-shadow" style="background-color: #E1F5FE !important">
         <div class="navbar-brand">
-            <a class="navbar-item" href="{{route('home')}}">
+            <a class="navbar-item" href="">
             <img <img src="{{asset('images/jongnederland-logo.png')}}" alt="jongnederland-logo">
             </a>
 
@@ -21,31 +21,23 @@
 
         <div id="navbarExampleTransparentExample" class="navbar-menu">
             <div class="navbar-start">
-                <a href="#" class="navbar-item is-tab {{Nav::isRoute('activiteiten')}}">Activiteiten</a>
-                <a href="#" class="navbar-item is-tab {{Nav::isRoute('informatie')}}">Informatie</a>
-                <a href="#" class="navbar-item is-tab {{Nav::isRoute('overons')}}">Over Ons</a>
-                <a href="#" class="navbar-item is-tab {{Nav::isRoute('trainingen')}}">Trainingen</a>
-                <a href="#" class="navbar-item is-tab {{Nav::isRoute('webshop')}}">Webshop</a>
-                <a href="#" class="navbar-item is-tab {{Nav::isRoute('spelendatabank')}}">Spelendatabank</a>
+                <a href="nieuws" class="navbar-item is-tab {{Nav::isRoute('home')}}">Nieuws</a>
+                <a href="activiteiten" class="navbar-item is-tab {{Nav::isRoute('activiteiten')}}">Activiteiten</a>
+                <a href="informatie" class="navbar-item is-tab {{Nav::isRoute('informatie')}}">Informatie</a>
+                <a href="over-ons" class="navbar-item is-tab {{Nav::isRoute('overons')}}">Over Ons</a>
+                <a href="trainingen" class="navbar-item is-tab {{Nav::isRoute('trainingen')}}">Trainingen</a>
+                <a href="webshop" class="navbar-item is-tab {{Nav::isRoute('webshop')}}">Webshop</a>
+                <a href="https://www.scoutsengidsenvlaanderen.be/spelendatabank" target="_blank" class="navbar-item is-tab {{Nav::isRoute('spelendatabank')}}">Spelendatabank</a>
             </div>
             <div class="navbar-end">
                 @if (Auth::guest())
                     <a href="{{route('login')}}" class="navbar-item is-tab">Login</a>
-                    <a href="{{route('register')}}" class="navbar-item is-tab">Registreer</a>
                 @else
                     <div class="navbar-item has-dropdown is-hoverable">
                         <a class="navbar-link" href="/documentation/overview/start/">
                             {{ Auth::user()->name }}
                         </a>
-                        <div class="navbar-dropdown is-boxed">
-                        <a class="navbar-item" href="#">
-                            <i class="fas fa-user-circle m-r-5"></i>
-                            Profiel
-                        </a>
-                        <a class="navbar-item" href="#">
-                            <i class="far fa-bell m-r-5"></i>
-                            Meldingen
-                        </a>
+                        <div class="navbar-dropdown is-boxed is-hoverable">
                         <a class="navbar-item" href="{{route('beheer.dashboard')}}">
                             <i class="fas fa-cog m-r-5"></i></i>
                             Beheer

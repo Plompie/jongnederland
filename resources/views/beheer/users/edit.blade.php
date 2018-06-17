@@ -9,7 +9,7 @@
     </div>
     <hr class="m-t-0">
 
-    <form action="{{route('users.update', $user->id)}}" method="POST">
+    <form action="{{route('gebruikers.update', $user->id)}}" method="POST">
             {{method_field('PUT')}}
             {{csrf_field()}}
            <div class="columns">
@@ -41,7 +41,7 @@
                 </p>
             </div>
             </b-radio-group>
-            
+
           <hr />
           <button class="button is-primary is-pulled-left" style="width: 250px;">Opslaan</button>
         </div>

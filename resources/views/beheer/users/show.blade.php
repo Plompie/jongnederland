@@ -9,7 +9,7 @@
         <!-- end of column -->
 
         <div class="column">
-            <a href="{{route('users.edit', $user->id)}}" class="button is-primary is-pulled-right">
+            <a href="{{route('gebruikers.edit', $user->id)}}" class="button is-primary is-pulled-right">
                 <i class="fa fa-user m-r-10"></i> Bewerk gebruiker</a>
         </div>
     </div>
@@ -26,18 +26,6 @@
                 <div class="field">
                     <label for="email" class="label">E-mailadres</label>
                     <pre>{{$user->email}}</pre>
-                </div>
-            </div>
-
-            <div class="field">
-                <div class="field">
-                    <label for="roles" class="label">Rollen</label>
-                    <ul>
-                        {{$user->roles->count() == 0 ? 'Deze gebruiker heeft nog geen rechten' : ''}}
-                        @foreach($user->roles as $role)
-                            <li>{{$role->display_name}} {{$role->description}}</li>
-                        @endforeach
-                    </ul>
                 </div>
             </div>
         </div>

@@ -10,13 +10,13 @@
             Administratie
         </p>
         <ul class="menu-list">
-            <li><a href="{{route('users.index')}}" class="{{ Nav::isResource('users') }}">Beheer gebruikers</a></li>
+            <li><a href="{{route('gebruikers.index')}}" class="{{ Nav::isResource('gebruikers') }}">Beheer gebruikers</a></li>
         </ul>
         <p class="menu-label">
             Content
         </p>
         <ul class="menu-list">
-            <li><a href="{{route('posts.index')}}" class="{{ Nav::isResource('posts', 2) }}">Blog artikels</a></li>
+            <li><a href="{{route('artikels.index')}}" class="{{ Nav::isResource('artikels', 2) }}">Beheer artikels</a></li>
         </ul>
     </aside>
 </div>

@@ -4,12 +4,12 @@
     <div class="flex-container">
         <div class="columns m-t-10">
             <div class="column">
-                <h1 class="title">Gebruiker overzicht</h1>
+                <h1 class="title">Artikel overzicht</h1>
             </div>
             <div class="column">
-                <a href="{{route('gebruikers.create')}}" class="button is-primary is-pulled-right">
+                <a href="{{route('artikels.create')}}" class="button is-primary is-pulled-right">
                     <i class="fas fa-plus-circle m-r-10"></i>
-                    Nieuwe gebruiker
+                    Nieuw artikel
                 </a>
             </div>
         </div>
@@ -20,23 +20,32 @@
             <thead>
               <tr>
                 <th>ID</th>
-                <th>Naam</th>
-                <th>E-mailadres</th>
-                <th>Aangemaakt op</th>
+                <th>Titel</th>
+                <th>Koptekst</th>
+                <th>Body</th>
+                <th>Afbeelding</th>
                 <th>Acties</th>
+                <th></th>
               </tr>
             </thead>
 
             <tbody>
-              @foreach ($users as $user)
+              @foreach ($posts as $post)
                 <tr>
-                  <th>{{$user->id}}</th>
-                  <td>{{$user->name}}</td>
-                  <td>{{$user->email}}</td>
-                  <td>{{$user->created_at->toFormattedDateString()}}</td>
+                  <th>{{$post->id}}</th>
+                  <td>{{$post->title}}</td>
+                  <td>{{substr($post->header, -20)}}</td>
+                  <td>{{substr($post->body, -20)}}</td>
                   <td>
-                    <form action="{{ route('gebruikers.destroy', ['id'=>$user->id]) }}" method="POST">
-                      <a class="button is-outlined m-r-10" href="{{route('gebruikers.edit', $user->id)}}">
+                  @if(empty($post->image))
+                    Geen afbeelding
+                  @else
+                    {{$post->image}}
+                  @endif
+                  </td>
+                  <td>
+                    <form action="{{ route('artikels.destroy', ['id'=>$post->id]) }}" method="POST">
+                      <a class="button is-outlined m-r-10" href="{{route('artikels.edit', ['id' => $post->id]) }}">
                         Bewerken
                       </a>
                       {{ csrf_field() }}
@@ -51,6 +60,6 @@
           </table>
         </div>
     </div>
-{{$users->links()}}
+
 
 @endsection

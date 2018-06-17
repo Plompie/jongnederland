@@ -10,20 +10,26 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+/*
 Route::get('/', function () {
     return view('welcome');
 });
-
+*/
 Auth::routes();
 
 Route::prefix('beheer')->middleware('role:administrator|redacteur|gebruiker')->group(function () {
   Route::get('/', 'BeheerController@index');
   Route::get('/dashboard', 'BeheerController@dashboard')->name('beheer.dashboard');
-  Route::resource('/users', 'UserController');
-  Route::resource('/permissions', 'PermissionController', ['except' => 'destroy']);
-  Route::resource('/roles', 'RoleController', ['except' => 'destroy']);
-  Route::resource('/posts', 'PostController');
+  Route::resource('/gebruikers', 'UserController');
+  Route::resource('/artikels', 'PostController');
 });
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/nieuws', 'PostController@publicHomePage');
+Auth::routes();
+Route::get('/', 'HomeController@index');
+Route::get('/activiteiten', 'HomeController@activiteiten');
+Route::get('/informatie', 'HomeController@informatie');
+Route::get('/over-ons', 'HomeController@overons');
+Route::get('/trainingen', 'HomeController@trainingen');
+Route::get('/webshop', 'HomeController@webshop');
+Route::resource('artikel', 'PostController');
